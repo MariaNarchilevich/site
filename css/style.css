@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prosto+One&display=swap");
 ul,
 a,
 nav {
@@ -80,9 +82,13 @@ body {
   z-index: 3;
 }
 
-.header__logo img {
-  max-width: 100%;
+.logo {
   display: block;
+  width: 100%;
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  font-family: "Bebas Neue";
 }
 
 @media (max-width: 767px) {
@@ -169,6 +175,33 @@ body {
   .header__list li {
     margin: 0 0 20px 0;
   }
+  .footer__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .footer__contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .footer__email {
+    font-size: 15px;
+  }
+  .footer__phone {
+    font-size: 15px;
+  }
+  .footer__site-dev {
+    font-size: 15px;
+    margin: 5px 0;
+  }
 }
 
 main {
@@ -181,6 +214,7 @@ main {
   left: 0;
   width: 100%;
   background-color: brown;
+  max-height: 50px;
 }
 
 .footer__body {
@@ -206,12 +240,12 @@ main {
 }
 
 .footer__email {
-  padding: 10px;
+  padding: 0 10px 0 0;
   color: #fff;
 }
 
 .footer__phone {
-  padding: 10px;
+  padding: 0 10px 0 0;
   color: #fff;
 }
 
