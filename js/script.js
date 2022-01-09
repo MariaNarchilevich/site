@@ -11,6 +11,16 @@ $(document).ready(function(){
     let pos2 = document.querySelector('.boyflex__b2');
     let pos3 = document.querySelector('.boyflex__b3');
     let kirp = document.querySelector('.boyflex__kirp');
+
+    if(window.matchMedia("(min-width: 767px)").matches)
+    {
+        pos1.addEventListener('click', function () { 
+            pos1.classList.add('d-none');
+            pos2.classList.remove('d-none');
+            kirp.classList.add('kirp-anim');
+        })  
+    }
+
     pos1.addEventListener('mouseover', function () { 
         pos1.classList.add('d-none');
         pos2.classList.remove('d-none');
