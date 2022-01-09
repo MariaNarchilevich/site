@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, instal-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>TheMasha.Flexbox</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/exercise2.css">
 </head>
 <body>
     <header class="header" >
@@ -41,18 +42,21 @@
     <main>
         <section>
             <div class="container">
-                <div class="">
-                    <img src="img/boy1.png" alt="boy">
-                </div>
-                <div class="">
-                    <img src="img/boy2.png" alt="boy">
-                </div>
-                <div class="">
-                    <img src="img/boy3.png" alt="boy">
-                </div>
-        
-                <div class="">
-                    <img src="img/boy7.png" alt="кирпич">
+                <div class="boyflex">
+                    <div class="boyflex__b1">
+                        <img src="img/boy1.png" alt="boy">
+                    </div>
+                     <div class="boyflex__b2 d-none">
+                         <p>Это мяч?...</p>
+                        <img src="img/boy2.png" alt="boy">
+                    </div>
+                    <div class="boyflex__b3 d-none">
+                        <img src="img/boy3.png" alt="boy" class="boy-tr">
+                        <p>Это кирпиччч....</p>
+                    </div>
+                    <div class="boyflex__kirp">
+                        <img src="img/boy7.png" alt="кирпич">
+                    </div>
                 </div>
             </div>
         </section>
