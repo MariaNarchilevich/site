@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Prosto+One&display=swap");
 ul,
 a,
 nav {
@@ -88,10 +87,13 @@ body {
   font-size: 30px;
   font-weight: bold;
   color: #fff;
-  font-family: "Bebas Neue";
+  font-family: "Bebas Neue", "Arial", sans-serif;
 }
 
 @media (max-width: 767px) {
+  p {
+    font-size: 15px;
+  }
   body.lock {
     overflow: hidden;
   }

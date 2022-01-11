@@ -11,16 +11,6 @@
   opacity: 0;
 }
 
-.boyflex__b1 {
-  display: block;
-}
-
-.container .b {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .d-none {
   display: none;
 }
