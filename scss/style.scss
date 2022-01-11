@@ -76,6 +76,9 @@ body {
 }
 
 @media (max-width:767px){
+    p {
+        font-size: 15px;
+    }
     body.lock {
         overflow: hidden;
     }
