@@ -82,6 +82,12 @@
     outputClick = document.querySelector('.block-top');
 
     button.addEventListener("click", function() {
+      if (textInp.value === null || textInp.value === "") {
+  alert("Введите данные");
+  return;
+}
+      output.innerHTML = '';
+      outputClick.innerHTML = '';
 		  const val = textInp.value;
 		  const arr = val.split('-');
 	  	let nums = [];
@@ -89,6 +95,7 @@
       console.log(arr);
 	  	arr.forEach(function(item) {
 			if (isNumeric(item)) {
+
 				nums.push(item)
 			} else {
 				strs.push(item.toLowerCase())
@@ -118,7 +125,6 @@
     }
 
     addDictItem();
-
     });
     
     function addDictItem() {
