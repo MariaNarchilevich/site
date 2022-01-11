@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, instal-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>TheMasha.Menu</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/exercise4.css">
+</head>
+<body>
+    <header class="header" >
+        <div class="container">
+            <div class="header__body">
+                <a href="index.html" class="header__logo">
+                    <span class="logo">TheMasha</span>
+                </a>
+                <div class="header__burger">
+                    <span>
+
+                    </span>
+                </div>
+                <nav class="header__menu">
+                    <ul class="header__list">
+                        <li class="header__link">
+                            <a href="index.html">1 задание</a>
+                        </li>
+                        <li class="header__link">
+                            <a href="exercise2.html">2 задание</a>
+                        </li>
+                        <li class="header__link">
+                            <a href="exercise3.html">3 задание</a>
+                        </li>
+                        <li class="header__link">
+                            <a href="exercise4.html">4 задание</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+      <div class="container">
+        <section>
+          <div class="block-top"> 
+            <!-- вывод по клику -->
+          </div>
+          <div class="center-blocks">
+            <div class="block-left">
+              <!-- массив -->
+            </div>
+            <div class="block-right">
+              <div class="input-field">
+                <input type="text" class="text-input" placeholder="лес-крик-23-бочка-55">
+                <button class="go" type="button">Разобрать</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+          <div class="footer__body">
+              <div class="footer__contact">
+              <a class="footer__email" href="mailto:mnarchilevich24@gmail.com">
+                  mnarchilevich24@gmail.com
+              </a>
+              <a class="footer__phone" href="tel:+79874449120">
+                  +7 987 444 91 20
+              </a>
+              </div>
+              <p class="footer__site-dev">© 2021, Created by Maria Narchilevich</p>
+          </div>
+      </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    button = document.querySelector('.go');
+    textInp = document.querySelector('.text-input');
+    output = document.querySelector('.block-left');
+    outputClick = document.querySelector('.block-top');
+
+    button.addEventListener("click", function() {
+		  const val = textInp.value;
+		  const arr = val.split('-');
+	  	let nums = [];
+	  	let strs = [];
+      console.log(arr);
+	  	arr.forEach(function(item) {
+			if (isNumeric(item)) {
+				nums.push(item)
+			} else {
+				strs.push(item.toLowerCase())
+			}
+		});
+      //сортировка
+      nums.sort(function(a,b){return a-b;});
+      strs.sort();
+
+    let dict = {};
+		strs.forEach(function (item, i) {
+			key = `a${i+1}`;
+			dict[key]=item;
+		});
+		nums.forEach(function (item, i) {
+			key = `n${i+1}`;
+			dict[key]=item;
+		});
+
+    for (let key in dict)
+    {
+      const teg_div = document.createElement('div');
+      teg_div.classList.add('dict-item');
+      teg_div.setAttribute('data-text', dict[key]);
+      teg_div.innerHTML = `${key} ${dict[key]}`;
+      output.append(teg_div);
+    }
+
+    addDictItem();
+
+    });
+    
+    function addDictItem() {
+        let dict_item = document.querySelectorAll('.dict-item');
+        for (let i = 0; dict_item.length > i; i++) {
+          dict_item[i].addEventListener('click', function () {
+                const append_el = this.cloneNode(true);
+                append_el.innerHTML = this.getAttribute('data-text');
+                outputClick.append(append_el);
+            })
+        }
+    }
+    function isNumeric(num){return !isNaN(num)}
+  </script>
+</body>
+</html>

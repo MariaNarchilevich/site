@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, instal-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>TheMasha</title>
+    <title>TheMasha.DOM</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/exercise.css">
+    <link rel="stylesheet" href="css/exercise3.css">
 </head>
 <body>
     <header class="header" >
@@ -22,7 +22,7 @@
                 <nav class="header__menu">
                     <ul class="header__list">
                         <li class="header__link">
-                            <a href="#exercise1">1 задание</a>
+                            <a href="index.html">1 задание</a>
                         </li>
                         <li class="header__link">
                             <a href="exercise2.html">2 задание</a>
@@ -40,35 +40,12 @@
     </header>
     <main>
         <div class="container">
-            <!-- задание рисунок на css -->
-            <section class="exercise1" id="exercise1">
-                <h1>Задание: Кот на css</h1>
-                <div class="figure">
-                    <!-- туловище -->
-                    <div class="figure__oval">
-                        <!-- голова -->
-                        <div class="figure__circle">
-                            <!-- нос -->
-                            <div class="figure__nose"></div>
-                            <!-- глаза -->
-                            <div class="figure__eye1 "></div>
-                            <div class="figure__eye2 "></div>
-                            <!-- рот -->
-                            <div class="figure__mouthe-right"></div>
-                            <div class="figure__mouthe-left"></div>
-                        </div>
-                        <!-- уши -->
-                        <div class="figure__ear-left"></div>
-                        <div class="figure__ear-right"></div>
-                    </div>
-                    <!-- хвост -->
-                    <div class="figure__tail"></div>
-                    <!-- ноги -->
-                    <div class="figure__leg-back"></div>
-                    <div class="figure__leg-front"></div>
-                </div>
+            <section>
+                <button class="create" type="button" >Создать</button>
+                <button class="repaint" type="button" >Перекрасить</button>
+                <br>
+                <div id="rand"></div> 
             </section>
-            <br>
         </div>
     </main>
     <footer class="footer">
@@ -87,6 +64,41 @@
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="js/script.js"></script>    
+    <script src="js/script.js"></script>
+    <script>
+ //dom
+let latinos = [	" \"Consuetudo est altera natura\" ", 
+                " \"Nota bene\" ",
+                " \"Nulla calamitas sola\" ",
+                " \"Per aspera ad astra\" "];
+
+let translate = [" \"Привычка - вторая натура\" ", 
+                 " \"Заметьте хорошо\!\" ",
+                 " \"Беда не приходит одна\" ",
+                 " \"Через тернии к звёздам\" "];
+
+let create = document.querySelector('.create');
+let rep = document.querySelector('.repaint'); 
+let addStr = document.getElementById('rand');                
+let counter = 0;
+
+create.addEventListener('click', function () {
+    counter++;
+    if (counter>latinos.length) {alert("фразы закончились");}
+    else {
+        const crel = document.createElement('p');
+        crel.innerHTML = `<span style="text-decoration:underline">n=${counter-1}</span> 
+        <span style="font-style: italic">${latinos[counter-1]}</span>  ${translate[counter-1]}`;
+        addStr.append(crel);
+        if((counter%2)===0) crel.classList.add('class1');
+        else crel.classList.add('class2');
+    }
+    console.log(counter);
+});
+
+rep.addEventListener('click', function(){
+    $('#rand > p').toggleClass('bold_style');
+});       
+    </script>
 </body>
 </html>

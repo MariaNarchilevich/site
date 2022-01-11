@@ -28,10 +28,10 @@
                             <a href="exercise2.html">2 задание</a>
                         </li>
                         <li class="header__link">
-                            <a href="#">3 задание</a>
+                            <a href="exercise3.html">3 задание</a>
                         </li>
                         <li class="header__link">
-                            <a href="#">4 задание</a>
+                            <a href="exercise4.html">4 задание</a>
                         </li>
                     </ul>
                 </nav>
@@ -40,8 +40,8 @@
     </header>
 
     <main>
-        <section>
-            <div class="container">
+         <div class="container">
+            <section>
                 <div class="boyflex">
                     <div class="boyflex__b1">
                         <img src="img/boy1.png" alt="boy">
@@ -58,8 +58,8 @@
                         <img src="img/boy7.png" alt="кирпич">
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
 
     <footer class="footer">
@@ -73,7 +73,38 @@
             </div>
         </div>
     </footer>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="js/script.js"></script> 
+    <script>
+        //анимация мальчика
+    let pos1 = document.querySelector('.boyflex__b1');
+    let pos2 = document.querySelector('.boyflex__b2');
+    let pos3 = document.querySelector('.boyflex__b3');
+    let kirp = document.querySelector('.boyflex__kirp');
+
+    if(window.matchMedia("(min-width: 767px)").matches)
+    {
+        pos1.addEventListener('click', function () { 
+            pos1.classList.add('d-none');
+            pos2.classList.remove('d-none');
+            kirp.classList.add('kirp-anim');
+        })  
+    }
+
+    pos1.addEventListener('mouseover', function () { 
+        pos1.classList.add('d-none');
+        pos2.classList.remove('d-none');
+        kirp.classList.add('kirp-anim');
+    })
+    pos2.addEventListener('click', function () {
+        pos2.classList.add('d-none'); 
+        pos3.classList.remove('d-none');
+        kirp.classList.add('kirp-anim2');
+        let boy = document.querySelector('.boy-tr');
+        boy.classList.add('boy-animate');
+        kirp.classList.add('kirp-anim2');
+    });
+    </script>
 </body>
 </html>
